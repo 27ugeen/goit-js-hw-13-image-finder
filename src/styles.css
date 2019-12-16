@@ -24,6 +24,7 @@ body {
 .gallery {
   display: flex;
   flex-wrap: wrap;
+  max-width: 90%;
   list-style: none;
   justify-content: space-evenly;
   padding: 0;
@@ -34,8 +35,8 @@ body {
   justify-content: space-evenly;
 }
 li {
-  width: 24%;
-  margin: 5px;
+  width: 25%;
+  padding: 2px;
 }
 
 img {
@@ -69,6 +70,42 @@ img {
   cursor: pointer;
 }
 
+/* .box {
+  width: auto;
+  max-height: 90vh;
+  margin: auto;
+} */
+input {
+  display: block;
+  margin: 20px auto 20px;
+  width: 210px;
+  line-height: 34px;
+  font-size: 18px;
+  font-weight: 400;
+  color: #000;
+  border-radius: 5px;
+  outline: none;
+}
+input::placeholder {
+  font-size: 16px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #bbbbbb;
+}
+button {
+  display: block;
+  margin: 20px auto 20px;
+  width: 210px;
+  line-height: 44px;
+  border: none;
+  border-radius: 5px;
+  background-color: rgba(99, 99, 102, 0.8);
+  font-size: 18px;
+  text-transform: uppercase;
+  color: #fff;
+  cursor: pointer;
+  outline: none;
+}
 /* body {
   min-height: 100vh;
   margin: 0;

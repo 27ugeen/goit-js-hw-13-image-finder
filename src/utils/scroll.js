@@ -1,26 +1,38 @@
 'use strict';
 
-function makeCounter() {
-  let currentCount = document.documentElement.clientHeight;
+import { setCurrentHeightValue } from './browserHeight';
 
-  return function() {
-    return (currentCount =
-      currentCount + document.documentElement.clientHeight);
-  };
-}
+const scrollPage = () => {
+  setTimeout(() => {
+    let height = setCurrentHeightValue();
 
-const counter = makeCounter(); // (*)
+    const scrollOptions = {
+      left: 0,
+      top: height,
+      behavior: 'smooth',
+    };
 
-function scrollPage() {
-  let height = counter();
-  console.log(height);
-  const scrollOptions = {
-    left: 0,
-    top: height,
-    behavior: 'smooth',
-  };
-
-  window.scrollTo(scrollOptions);
-}
+    window.scrollTo(scrollOptions);
+  }, 0);
+};
 
 export { scrollPage };
+
+//======================================
+
+// const container = refs.body;
+
+//   container.style.height = 'auto';
+
+//   /** Get the computed height of the container. */
+//   const height = container.clientHeight + 'px';
+
+//   /** Set the height of the content as 0px, */
+//   /** so we can trigger the slide down animation. */
+//   container.style.height = '0px';
+
+//   /** Do this after the 0px has applied. */
+//   /** It's like a delay or something. MAGIC! */
+//   setTimeout(() => {
+//     container.style.height = height;
+//   }, 0);

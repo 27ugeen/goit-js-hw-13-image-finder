@@ -25,7 +25,7 @@ const apiService = {
     this.query = string;
   },
   incrementPage() {
-    this.page += 1;
+    this.page ++;
   },
   resetPage() {
     this.page = 1;
